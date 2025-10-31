@@ -8,6 +8,9 @@
       "email": "hello@saucebase.dev"
     }
   ],
+  "require": {
+    "spatie/laravel-permission": "^6.21"
+  },
   "extra": {
     "laravel": {
       "providers": [],

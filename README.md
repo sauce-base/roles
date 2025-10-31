@@ -21,3 +21,26 @@ composer require saucebase/roles
 composer dump-autoload
 php artisan module:enable Roles
 ```
+
+## Configuration
+
+Make sure to use the `HasRoles` trait in your User model:
+
+```php
+use HasRoles;
+```
+
+### Middleware Registration
+
+For route protection, you'll need to register the middleware in your `bootstrap/app.php`. The Roles module provides three middleware classes from Spatie's Laravel Permission package:
+
+```php
+// In bootstrap/app.php
+$middleware->alias([
+    'role' => \Spatie\Permission\Middleware\RoleMiddleware::class,
+    'permission' => \Spatie\Permission\Middleware\PermissionMiddleware::class,
+    'role_or_permission' => \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class,
+]);
+```
+
+For more middleware options and combinations, refer to the [Spatie Laravel Permission documentation](https://spatie.be/docs/laravel-permission/v6/basic-usage/middleware).
