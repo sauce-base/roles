@@ -1,0 +1,29 @@
+{
+  "name": "saucebase/roles",
+  "description": "",
+  "type": "saucebase-module",
+  "authors": [
+    {
+      "name": "Sauce Base",
+      "email": "hello@saucebase.dev"
+    }
+  ],
+  "extra": {
+    "laravel": {
+      "providers": [],
+      "aliases": {}
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Modules\\Roles\\": "app/",
+      "Modules\\Roles\\Database\\Factories\\": "database/factories/",
+      "Modules\\Roles\\Database\\Seeders\\": "database/seeders/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Modules\\Roles\\Tests\\": "tests/"
+    }
+  }
+}

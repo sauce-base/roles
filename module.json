@@ -1,0 +1,11 @@
+{
+    "name": "Roles",
+    "alias": "roles",
+    "description": "Roles module",
+    "author": "Sauce Base",
+    "version": "v1.0",
+    "keywords": ["roles"],
+    "priority": 0,
+    "providers": ["Modules\\Roles\\Providers\\RolesServiceProvider"],
+    "files": []
+}
