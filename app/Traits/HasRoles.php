@@ -7,8 +7,8 @@ use Spatie\Permission\Traits\HasRoles as SpatieHasRoles;
 
 trait HasRoles
 {
-
     use SpatieHasRoles;
+
     /**
      * Check if user is an administrator
      *

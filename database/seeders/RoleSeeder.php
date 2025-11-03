@@ -1,9 +1,9 @@
 <?php
 
-namespace Database\Seeders;
+namespace Modules\Roles\Database\Seeders;
 
-use Modules\Roles\Enums\Role as RoleEnum;
 use Illuminate\Database\Seeder;
+use Modules\Roles\Enums\Role as RoleEnum;
 use Spatie\Permission\Models\Role;
 
 class RoleSeeder extends Seeder
