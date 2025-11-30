@@ -4,6 +4,12 @@ namespace Modules\Roles\Enums;
 
 enum Role: string
 {
+    /**
+     * Define role cases
+     *
+     * @case ADMIN - Administrator with full access to Filament panel and dashboard
+     * @case USER - Regular user with limited access to dashboard
+     */
     case ADMIN = 'admin';
     case USER = 'user';
 
@@ -15,17 +21,6 @@ enum Role: string
         return match ($this) {
             self::ADMIN => 'Administrator',
             self::USER => 'User',
-        };
-    }
-
-    /**
-     * Get a detailed description of the role's capabilities
-     */
-    public function description(): string
-    {
-        return match ($this) {
-            self::ADMIN => 'Full system access with user management capabilities',
-            self::USER => 'Basic user with limited permissions',
         };
     }
 
