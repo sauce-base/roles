@@ -2,7 +2,9 @@
 
 namespace Modules\Roles\Providers;
 
+use App\Models\User;
 use Illuminate\Support\ServiceProvider;
+use Modules\Roles\Observers\UserObserver;
 
 class RolesServiceProvider extends ServiceProvider
 {
@@ -19,6 +21,7 @@ class RolesServiceProvider extends ServiceProvider
         $this->registerCommandSchedules();
         $this->registerTranslations();
         $this->registerConfig();
+        $this->registerObservers();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'database/migrations'));
     }
 
@@ -70,8 +73,15 @@ class RolesServiceProvider extends ServiceProvider
      */
     protected function registerConfig(): void
     {
-        $this->publishes([module_path($this->moduleName, 'config/config.php') => config_path($this->moduleNameLower.'.php')], 'config');
         $this->mergeConfigFrom(module_path($this->moduleName, 'config/config.php'), $this->moduleNameLower);
+    }
+
+    /**
+     * Register model observers.
+     */
+    protected function registerObservers(): void
+    {
+        User::observe(UserObserver::class);
     }
 
     /**
