@@ -35,7 +35,13 @@ class UserObserverTest extends TestCase
         // Assert that the user has the User role
         $this->assertTrue($user->hasRole(Role::USER));
         $this->assertCount(1, $user->roles);
-        $this->assertEquals(Role::USER->value, $user->roles->first()->name);
+
+        /**
+         * @var SpatieRole $role
+         */
+        $role = $user->roles->first();
+
+        $this->assertEquals(Role::USER->value, $role->name);
     }
 
     public function test_it_only_assigns_user_role_once(): void
