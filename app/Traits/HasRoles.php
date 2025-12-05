@@ -50,16 +50,4 @@ trait HasRoles
 
         return $role->label();
     }
-
-    /**
-     * Get user role description
-     *
-     * @return string The role description
-     */
-    public function getRoleDescriptionAttribute(): string
-    {
-        $role = Role::fromString($this->getRoleNames()->first());
-
-        return $role->description();
-    }
 }
