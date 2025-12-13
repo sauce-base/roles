@@ -2,13 +2,13 @@
 
 namespace Modules\Roles\Filament;
 
-use Coolsam\Modules\Concerns\ModuleFilamentPlugin;
+use App\Filament\ModulesFilamentPlugin;
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 
 class RolesPlugin implements Plugin
 {
-    use ModuleFilamentPlugin;
+    use ModulesFilamentPlugin;
 
     public function getModuleName(): string
     {
