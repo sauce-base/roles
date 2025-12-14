@@ -9,9 +9,9 @@ Install via Composer:
 ```bash
 composer require saucebase/roles
 composer dump-autoload
-php artisan module:enable Roles
-php artisan module:migrate Roles
-php artisan module:seed Roles
+docker compose exec workspace php artisan module:enable Roles
+docker compose exec workspace php artisan module:migrate Roles
+docker compose exec workspace php artisan module:seed Roles
 npm run build
 ```
 
@@ -126,7 +126,7 @@ The Filament admin panel is protected with the `role:admin` middleware. This is 
 
 ```bash
 # Via Artisan Tinker
-php artisan tinker
+docker compose exec workspace php artisan tinker
 
 # Create an admin user
 $user = App\Models\User::create([
