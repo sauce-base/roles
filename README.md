@@ -10,8 +10,7 @@ Install via Composer:
 composer require saucebase/roles
 composer dump-autoload
 docker compose exec workspace php artisan module:enable Roles
-docker compose exec workspace php artisan module:migrate Roles
-docker compose exec workspace php artisan module:seed Roles
+docker compose exec workspace php artisan module:migrate Roles --seed
 npm run build
 ```
 
@@ -22,9 +21,9 @@ This module extends [Spatie Laravel Permission](https://spatie.be/docs/laravel-p
 - **Predefined Role System** — Admin and User roles with enum-based type safety
 - **Automatic Role Assignment** — New users are automatically assigned the User role via UserObserver
 - **Enhanced User Model** — Extended HasRoles trait with convenience methods:
-  - `isAdmin()` and `isUser()` helper methods
-  - `getRole()` and `getRoleLabel()` attribute accessors
-  - Type-safe role checking with Role enum
+    - `isAdmin()` and `isUser()` helper methods
+    - `getRole()` and `getRoleLabel()` attribute accessors
+    - Type-safe role checking with Role enum
 - **Database Seeding** — Automatic role creation via `module:seed Roles` command
 - **Filament Integration** — Modular plugin system ready for admin panel integration
 - **Module Structure** — Organized codebase following Sauce Base module conventions
@@ -162,6 +161,7 @@ vendor/bin/phpunit modules/Roles/tests/Unit/UserObserverTest.php
 ```
 
 Tests verify:
+
 - New users are automatically assigned the User role
 - Role assignment doesn't create duplicates
 - Observer doesn't interfere with manually assigned roles
